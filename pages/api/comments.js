@@ -80,7 +80,7 @@ export default async function handler(req, res) {
 			res.end(JSON.stringify(comments));
 		} catch (error) {
 			res.json(error);
-			res.status(405).end(JSON.stringify({ message: "Gagal" }));
+			res.status(405).json({ message: "gagal" });
 		}
 	}
 }
