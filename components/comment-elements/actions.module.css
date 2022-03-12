@@ -1,0 +1,29 @@
+.actions {
+	display: flex;
+	column-gap: 15px;
+	align-items: center;
+	position: relative;
+	right: 20px;
+}
+.actions * {
+	font-weight: 700;
+	border: none;
+	background-color: transparent;
+	display: flex;
+	justify-content: center;
+	column-gap: 3px;
+	cursor: pointer;
+	color: #5f5f96;
+}
+.delete-button span {
+	color: #f06264;
+}
+@media only screen and (min-width: 600px) {
+	.actions {
+		column-gap: 15px;
+		align-items: center;
+		position: absolute;
+		right: 20px;
+		margin-top: 15px;
+	}
+}

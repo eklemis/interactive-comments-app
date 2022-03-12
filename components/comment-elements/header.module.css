@@ -1,0 +1,23 @@
+.header {
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+	position: relative;
+}
+.user-name {
+	text-transform: lowercase;
+	color: #3a434a;
+	font-weight: 700;
+}
+.posting-time {
+	text-transform: lowercase;
+	color: #7f8289;
+}
+.you {
+	background-color: #5355a5;
+	border-radius: 2px;
+	text-align: center;
+	text-transform: lowercase;
+	color: white;
+	padding: 2px 5px;
+}

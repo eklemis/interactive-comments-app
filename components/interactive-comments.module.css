@@ -1,0 +1,16 @@
+.comments-wrapper {
+	position: relative;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	width: 95vw;
+}
+@media only screen and (min-width: 600px) {
+	.comments-wrapper {
+		max-width: 80vw;
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.comments-wrapper {
+		max-width: 50vw;
+	}
+}

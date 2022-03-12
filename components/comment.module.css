@@ -1,0 +1,19 @@
+.replies-wrapper {
+	width: 100%;
+	padding: 0px;
+	position: relative;
+}
+.replies-wrapper::before {
+	content: "";
+	position: absolute;
+	width: 1px;
+	height: 100%;
+	background-color: #7f8289;
+	margin-left: -25px;
+	opacity: 0.2;
+}
+@media only screen and (min-width: 600px) {
+	.replies-wrapper {
+		padding-left: 50px;
+	}
+}

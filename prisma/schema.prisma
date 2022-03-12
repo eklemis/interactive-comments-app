@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./icomments.db"
+}
+
+model User {
+  userName String @unique @default(cuid())
+  imagePng String
+  imageWebp String
+  comments Comments[]
+  gotMentions Replies[] @relation("GotMentioned")
+}
+
+model Comments{
+  id String @id @default(cuid())
+  user User? @relation(fields: [userName], references: [userName])
+  userName String
+  content String
+  postedAt DateTime @default(now())
+  numLikes Int
+  type String @default("MAIN")
+  replies Replies[] @relation("RepliesGot")
+  ofReply Replies[] @relation("CommentOfReply")
+}
+
+model Replies{
+  id String @id @default(uuid())
+  parentComment Comments @relation("RepliesGot",fields: [parentCommentId], references: [id])
+  parentCommentId String
+  comment Comments @relation("CommentOfReply", fields: [commentId], references: [id])
+  commentId String
+  mentionedUser User @relation("GotMentioned", fields: [mentionedUserName], references: [userName])
+  mentionedUserName String
+}
