@@ -73,6 +73,7 @@ export default async function handler(req, res) {
 			res.status(200).json({ message: "success", data: result });
 		}
 	} else {
+		console.log("Commments data requested!");
 		try {
 			const comments = await getFormatedComments();
 			res.statusCode = 200;
