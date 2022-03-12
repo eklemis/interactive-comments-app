@@ -79,8 +79,7 @@ export default async function handler(req, res) {
 			res.setHeader("Content-Type", "application/json");
 			res.end(JSON.stringify(comments));
 		} catch (error) {
-			res.json(error);
-			res.status(405).json({ message: "gagal" });
+			res.status(405).json({ message: error });
 		}
 	}
 }
