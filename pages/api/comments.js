@@ -72,7 +72,7 @@ export default async function handler(req, res) {
 
 			res.status(200).json({ message: "success", data: result });
 		}
-	} else if (req.method === "GET") {
+	} else {
 		try {
 			const comments = await getFormatedComments();
 			res.statusCode = 200;
